@@ -1,14 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  #tests go here
+  # tests go here
 
-  subject { Comment.new(
-    post: Post.create(author: User.create(name: 'David Testing'), title: 'Hello', text: 'This is Davids post'), 
-    author: User.create(name: 'Lilly Tester'),
-    text: 'One Amazing test comment'
-  )
-  }
+  subject do
+    Comment.new(
+      post: Post.create(author: User.create(name: 'David Testing'), title: 'Hello', text: 'This is Davids post'),
+      author: User.create(name: 'Lilly Tester'),
+      text: 'One Amazing test comment'
+    )
+  end
 
   before { subject.save }
 

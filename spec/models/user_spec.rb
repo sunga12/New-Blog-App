@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  #tests go here
-  subject { User.new(
-    name: 'Lilly Tester',
-    photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-    bio: 'Teacher from Poland.')
-  }
+  # tests go here
+  subject do
+    User.new(
+      name: 'Lilly Tester',
+      photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+      bio: 'Teacher from Poland.'
+    )
+  end
 
   before { subject.save }
 
@@ -24,5 +26,4 @@ RSpec.describe User, type: :model do
     subject.posts_counter = 'sandwich'
     expect(subject).to_not be_valid
   end
-
 end

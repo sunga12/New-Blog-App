@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  #tests go here
+  # tests go here
 
 
-  subject { Post.new(
-    author: User.create(name: 'Lilly Tester'), title: 'Hello', text: 'This is my first post')
-  }
+  subject do
+    Post.new(
+      author: User.create(name: 'Lilly Tester'), title: 'Hello', text: 'This is my first post'
+    )
+  end
 
   before { subject.save }
 
@@ -40,7 +42,6 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
     subject.comments_counter = 0
     expect(subject).to be_valid
-
   end
 
   it 'LikesCounter should be greater than or equal to zero' do
@@ -49,5 +50,4 @@ RSpec.describe Post, type: :model do
     subject.likes_counter = 0
     expect(subject).to be_valid
   end
-
 end

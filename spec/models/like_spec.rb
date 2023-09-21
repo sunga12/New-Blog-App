@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  #tests go here
+  # tests go here
 
-  subject { Like.new(
-    post: Post.create(author: User.create(name: 'David Testing'), title: 'Hello', text: 'This is Davids post'), 
-    author: User.create(name: 'Lilly Tester'))
-  }
+  subject do
+    Like.new(
+      post: Post.create(author: User.create(name: 'David Testing'), title: 'Hello', text: 'This is Davids post'),
+      author: User.create(name: 'Lilly Tester')
+    )
+  end
 
   before { subject.save }
 

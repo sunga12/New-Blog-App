@@ -10,7 +10,7 @@ class Comment < ApplicationRecord
 
   # Validations
   validates :text, presence: true
- 
+
   # Callbacks
 
   after_create :increment_post_comments_counter
