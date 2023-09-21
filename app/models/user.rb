@@ -11,6 +11,10 @@ class User < ApplicationRecord
   attribute :photo, :string
   attribute :posts_counter, :integer, default: 0
 
+  # Validations
+  validates :name, presence: true
+  validates :posts_counter, numericality: { greater_than_or_equal_to: 0, only_integer: true}
+
   # Methods
 
   def three_most_recent_posts
