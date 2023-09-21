@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   # tests go here
 
-
   subject do
     Post.new(
       author: User.create(name: 'Lilly Tester'), title: 'Hello', text: 'This is my first post'
