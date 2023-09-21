@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   # Methods
 
-  def three_recent_posts
+  def three_most_recent_posts
     
     # 'order' to sort the posts by 'created_at' in descending order
     # 'limit' to limit the result to 3 posts
