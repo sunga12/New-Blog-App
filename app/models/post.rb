@@ -12,6 +12,12 @@ class Post < ApplicationRecord
   attribute :comments_counter, :integer, default: 0
   attribute :likes_counter, :integer, default: 0
 
+  # Validations
+  validates :title, presence: true, length: { maximum: 250 }
+  validates :text, presence: true
+  validates :comments_counter, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :likes_counter, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+
   # Callbacks
 
   after_create :increment_user_posts_counter
