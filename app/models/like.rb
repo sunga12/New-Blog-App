@@ -1,10 +1,8 @@
 class Like < ApplicationRecord
-  
   # Associations
 
   belongs_to :author, class_name: 'User', foreign_key: :user_id
   belongs_to :post
-
 
   # Callbacks
 
@@ -19,7 +17,5 @@ class Like < ApplicationRecord
 
   def decrement_post_likes_counter
     post.decrement!(:likes_counter)
-
   end
-
 end

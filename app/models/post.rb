@@ -1,6 +1,4 @@
 class Post < ApplicationRecord
-
-  
   # Associations
 
   belongs_to :author, class_name: 'User', foreign_key: :author_id
@@ -8,7 +6,7 @@ class Post < ApplicationRecord
   has_many :comments, foreign_key: :post_id
 
   # Attributes
-  
+
   attribute :title, :string
   attribute :text, :text
   attribute :comments_counter, :integer, default: 0
@@ -30,8 +28,6 @@ class Post < ApplicationRecord
   end
 
   def five_most_recent_comments
-
-    self.comments.order(created_at: :desc).limit(5)
+    comments.order(created_at: :desc).limit(5)
   end
-
 end

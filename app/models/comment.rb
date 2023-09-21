@@ -1,5 +1,4 @@
 class Comment < ApplicationRecord
-
   # Associations
 
   belongs_to :author, class_name: 'User', foreign_key: :user_id
@@ -22,7 +21,5 @@ class Comment < ApplicationRecord
 
   def decrement_post_comments_counter
     post.decrement!(:comments_counter)
-
   end
-
 end
