@@ -54,6 +54,7 @@
 - **Write Posts**
 - **Likes on Posts**
 - **Comments on Posts**
+- **Displays HTML Pages**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
