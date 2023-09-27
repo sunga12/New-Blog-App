@@ -1,3 +1,25 @@
 <h1>User Posts</h1>
 
 <p>Here is a list of posts for a given user</p>
+
+
+
+<div>
+  <% @posts.each do |post|%>
+  <div>
+    <p><%= post.title%></p>
+    <p><%= post.text%><p>
+    <p>Comments: <%= post.comments_counter%><p>
+    <p>Likes: <%= post.likes_counter%><p>
+    <br>
+    <div>
+      <% post.five_most_recent_comments.each do |comment| %>
+      <p><%= comment.text%></p>
+      <% end %>
+    </div>
+  </div>
+
+    <%end%>
+
+</div>
+</div>
