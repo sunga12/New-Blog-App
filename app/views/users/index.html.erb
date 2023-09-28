@@ -1,3 +1,12 @@
-<h1>Users</h1>
 
-<p>Here is a list of users</p>
+<section class="mx-20" >
+  <% @users.each do |user| %>
+    <a href="/users/<%= user.id%>" class="user">
+      <img class="pro-pic" src='<%user.photo%>' alt='Profile-pic'>
+      <div class="user-dets">
+        <h2 class="user-name" ><%=user.name%></h2>
+        <p class='num-posts' >Number of Posts: <%=user.posts_counter%></p>
+      </div>
+    </a>
+  <%end%>
+</section>

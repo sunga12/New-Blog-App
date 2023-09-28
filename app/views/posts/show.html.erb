@@ -1,3 +1,20 @@
-<h1>User Post</h1>
 
-<p>Here is a post for a given user</p>
+<section >
+<div class="post" >
+  <div class="post-header">
+    <p><%= @user_post.title %>
+    by 
+    <%= @user.name %></p>
+    <p>Comments: <%= @user_post.comments_counter %> Likes: <%= @user_post.likes_counter %></p>
+  </div>
+  <br>
+  <p><%= @user_post.text %></p>
+</div>
+
+<div class="post-comments">
+  <% @user_post.comments.each do |comment| %>
+      <p><%= comment.author.name %>: <%= comment.text%></p>
+  <% end %>
+</div>
+
+</section>
