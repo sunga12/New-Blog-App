@@ -1,25 +1,48 @@
-<h1>User Posts</h1>
 
-<p>Here is a list of posts for a given user</p>
+<section>
+
+<div class="user" >
+  <% if @posts[0] != nil %>
+    <% author = @posts[0].author %>
+        <img class="pro-pic" src='<%author.photo%>' alt='Profile-pic'> <br>
+      <div class="user-dets">
+        <h2 class="user-name"><%=author.name%></h2>
+        <p class='num-posts'>Number of Posts: <%=author.posts_counter%></p>
+      </div>
+  <% else %>
+    <p class='user-name'>This User has no posts</p>
+  <%end%>
+</div>
 
 
-
-<div>
+<div class="posts">
   <% @posts.each do |post|%>
-  <div>
-    <p><%= post.id%></p>
-    <p><%= post.text%><p>
-    <p>Comments: <%= post.comments_counter%><p>
-    <p>Likes: <%= post.likes_counter%><p>
-    <br>
-    <div>
-      <% post.five_most_recent_comments.each do |comment| %>
-      <p><%= comment.text%></p>
+    <div class="post-and-comment" >
+      <div class="post">
+      <% if(@posts != []) %>
+        <p><%= post.title%></p>
+        <p><%= post.id%></p>
+
+        <p><%= post.text%><p>
+        <div class="comments-likes">
+          <p>Comments: <%= post.comments_counter%><p>
+          <p>Likes: <%= post.likes_counter%><p>
+        </div>
+        <% else %>
+        <p>No Posts Yet, Add one to see them Here!</p>
+        <% end %>
+      </div>
+      <% if(post.five_most_recent_comments != []) %>
+      <div class="post-comments">
+        <% post.five_most_recent_comments.each do |comment| %>
+        <p><%= comment.author.name%>: <%= comment.text%></p>
+        <% end %>
+      </div>
       <% end %>
     </div>
-  </div>
-
-    <%end%>
-
+  <%end%>
 </div>
-</div>
+
+<button>Pagination</button>
+
+</section>

@@ -1,15 +1,83 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+section {
+  width: 100%;
+}
+
+.user {
+  display: flex;
+  gap: 2%;
+  padding-bottom: 2%;
+}
+
+.user-dets {
+  width: 90%;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.user-name {
+  font-size: 1.5rem;
+}
+
+.num-posts {
+  font-size: 0.7rem;
+  align-self: flex-end;
+}
+
+.pro-pic {
+  border: 3px solid black;
+}
+
+.user-bio {
+  border: 3px solid black;
+  padding: 2%;
+}
+
+.user-post {
+  border: 3px solid black;
+  padding: 2%;
+}
+
+button {
+  border: 3px solid black;
+  margin-left: 40%;
+  width: 20%;
+}
+
+.posts {
+  width: 100%;
+}
+
+.post-and-comment {
+  margin: 3% 0;
+  width: 100%;
+}
+
+.post {
+  border: 3px solid black;
+  padding: 2%;
+}
+
+.comments-likes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1%;
+}
+
+.post-comments {
+  border: 3px solid black;
+  padding: 2%;
+  margin: 0% 0;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-dets {
+  display: flex;
+}
