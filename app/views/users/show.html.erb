@@ -15,7 +15,7 @@
 <br>
 
 <% @user.three_most_recent_posts.each do |post| %>
-  <div class="user-post">
+  <div class="post">
     <a href="/users/<%= post.author.id %>/posts/<%= post.id %>">
       <h4><%=post.title%></h4>
       <div>

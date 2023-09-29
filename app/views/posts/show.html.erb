@@ -9,7 +9,16 @@
   </div>
   <br>
   <p><%= @user_post.text %></p>
-  <button><%= link_to "Add Comment", new_user_post_comment_path(post_id: @user_post.id) %></button>
+  <div class="comment-like-wrapper">
+    <button class="add" ><%= link_to "Comment", new_user_post_comment_path(post_id: @user_post.id) %></button>
+    <button class="add">
+    <%= form_with model: @like, url: user_post_likes_path(post_id: @user_post) do |f| %>
+    <%= f.submit "Like" %>
+    <% end %>
+    </button>
+  </div>
+
+  <%# <button><%= link_to "Like", user_post_likes_path(post_id: @user_post.id) %>
 </div>
 
 <div class="post-comments">
@@ -17,5 +26,7 @@
       <p><%= comment.author.name %>: <%= comment.text%></p>
   <% end %>
 </div>
+
+<button ><%= link_to "Back to Posts", user_posts_path(@user) %></button>
 
 </section>

@@ -21,8 +21,6 @@
       <div class="post">
       <% if(@posts != []) %>
         <p><%= post.title%></p>
-        <p><%= post.id%></p>
-
         <p><%= post.text%><p>
         <div class="comments-likes">
           <p>Comments: <%= post.comments_counter%><p>
@@ -42,6 +40,8 @@
     </a>
   <% end %>
 </div>
+
+<button><%= link_to "Back to Users", users_path(@user) %></button>
 
 <button><%= link_to "Add Post", new_user_post_path(@user) %></button>
 
