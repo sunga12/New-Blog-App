@@ -4,6 +4,11 @@ class PostsController < ApplicationController
     @posts = @user.posts
   end
 
+  def new
+    @user = current_user
+    @post = Post.new
+  end
+
   def show
     @user = User.find(params[:user_id])
     @user_post = @user.posts.find(params[:id])
