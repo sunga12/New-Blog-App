@@ -15,13 +15,15 @@
 <br>
 
 <% @user.three_most_recent_posts.each do |post| %>
-  <div class="user-post">
-    <h4><%=post.title%></h4>
-    <div>
-      <p><%=post.text%></p>
-      <p>Comments:<%=post.comments_counter%></p>
-      <p>Likes:<%=post.likes_counter%></p>
-    </div>
+  <div class="post">
+    <a href="/users/<%= post.author.id %>/posts/<%= post.id %>">
+      <h4><%=post.title%></h4>
+      <div>
+        <p><%=post.text%></p>
+        <p>Comments:<%=post.comments_counter%></p>
+        <p>Likes:<%=post.likes_counter%></p>
+      </div>
+    </a>
   </div>
   <br>
 <%end%>
