@@ -9,6 +9,7 @@
   </div>
   <br>
   <p><%= @user_post.text %></p>
+  <button><%= link_to "Add Comment", new_user_post_comment_path(post_id: @user_post.id) %></button>
 </div>
 
 <div class="post-comments">
