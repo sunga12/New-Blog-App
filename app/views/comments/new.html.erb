@@ -1,7 +1,7 @@
 <h2>New Comment</h2>
 <div>
 <br>
-<%= form_with model: @comment, method: :post, url: new_user_post_comment_path do |form| %>
+<%= form_with model: @comment, method: :post, url: user_post_comments_path do |form| %>
 
   <%= form.label :text %><br>
   <%= form.text_field :text %><br>

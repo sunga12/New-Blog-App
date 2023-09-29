@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       resources :comments, only: [ :new, :create ]
     end
     end
-    
+
   # Defines the root path route ("/")
   # root "articles#index"
+
 end
