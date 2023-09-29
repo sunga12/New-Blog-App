@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @post = Post.new
 
     respond_to do |format|
-      format.html {render :new }
+      format.html { render :new }
     end
   end
 
@@ -17,22 +17,22 @@ class PostsController < ApplicationController
     @post = Post.new(params.require(:post).permit(:title, :text))
     @post.author = current_user
 
-      # respond_to block
-      respond_to do |format|
-        format.html do
-          if @post.save  # if post saves
-            # success message
-            flash[:success] = "Post Saved Successfully!"
-            # redirect to index
-            redirect_to user_path(id: current_user)
-          else
-            # error message
-            flash.now[:error] = "Error: Post could not be saved"
-            # render new  end
-            render :new
-          end
+    # respond_to block
+    respond_to do |format|
+      format.html do
+        if @post.save # if post saves
+          # success message
+          flash[:success] = 'Post Saved Successfully!'
+          # redirect to index
+          redirect_to user_path(id: current_user)
+        else
+          # error message
+          flash.now[:error] = 'Error: Post could not be saved'
+          # render new  end
+          render :new
         end
       end
+    end
   end
 
   def show
