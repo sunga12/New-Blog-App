@@ -23,7 +23,6 @@ RSpec.describe 'Posts', type: :request do
     let(:user) { User.create(name: 'Jackson', bio: 'Robot AI') }
     let(:post) { Post.create(author: user, title: 'Introducing me', text: 'I am a Robot AI') }
 
-
     before do
       get user_post_path(user.id, post.id)
     end

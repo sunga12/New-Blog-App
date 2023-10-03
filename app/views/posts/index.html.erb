@@ -14,7 +14,6 @@
   <%end%>
 </div>
 
-
 <div class="posts">
   <% @posts.includes(:comments, :author).each do |post|%>
     <a href="/users/<%= post.author.id %>/posts/<%= post.id %>" class="post-and-comment" >
