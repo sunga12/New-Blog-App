@@ -4,7 +4,7 @@
 <div class="user" >
   <% if @posts[0] != nil %>
     <% author = @posts[0].author %>
-        <img class="pro-pic" src='<%author.photo%>' alt='Profile-pic'> <br>
+        <img class="pro-pic" src='<%= author.photo%>' alt='Profile-pic'> <br>
       <div class="user-dets">
         <h2 class="user-name"><%=author.name%></h2>
         <p class='num-posts'>Number of Posts: <%=author.posts_counter%></p>

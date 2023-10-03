@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :system do
   before(:each) do
-    @user1 = User.create(name: 'Jacob', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Guatemala.')
+    @user1 = User.create(name: 'Jacob', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                         bio: 'Teacher from Guatemala.')
     @user2 = User.create(name: 'Milly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Engineer from Zambia')
     @user3 = User.create(name: 'Barbara', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Lawyer from Italy')
     @post1 = Post.create(title: 'First post', text: 'This is my first post', author: @user1)
@@ -11,7 +12,6 @@ RSpec.describe User, type: :system do
     @comment3 = Comment.create(post: @post1, text: 'Nice to meet you', author: @user2)
     @like1 = Like.create(post: @post1, author: @user2)
     @like2 = Like.create(post: @post1, author: @user3)
-
   end
 
   describe 'Post show Page' do
@@ -49,7 +49,5 @@ RSpec.describe User, type: :system do
       expect(page).to have_content('Welcome to the post')
       expect(page).to have_content('Nice to meet you')
     end
-
   end
-
 end

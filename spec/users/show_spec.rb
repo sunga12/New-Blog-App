@@ -7,7 +7,6 @@ RSpec.describe User, type: :system do
     @post2 = Post.create(title: '2nd post', text: 'Second post', author: @user)
     @post3 = Post.create(title: 'Numero 3 post', text: '3rd post is here', author: @user)
     @post4 = Post.create(title: '4th post', text: 'May the Forth be with you', author: @user)
-
   end
 
   describe 'User show Page' do
@@ -37,7 +36,6 @@ RSpec.describe User, type: :system do
       expect(page).to have_content('Second post')
       expect(page).to have_content('3rd post is here')
       expect(page).to have_content('May the Forth be with you')
-
     end
 
     it 'clicking on the post should take you to the post show page' do
@@ -54,5 +52,4 @@ RSpec.describe User, type: :system do
       expect(page).to have_content('Likes')
     end
   end
-
 end

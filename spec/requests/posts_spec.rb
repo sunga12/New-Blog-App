@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-
     let(:user) { User.create(name: 'Jackson', bio: 'Robot AI') }
 
     before { get user_posts_path(user.id) }
@@ -21,7 +20,6 @@ RSpec.describe 'Posts', type: :request do
   end
 
   describe 'GET /show' do
-
     let(:user) { User.create(name: 'Jackson', bio: 'Robot AI') }
     let(:post) { Post.create(author: user, title: 'Introducing me', text: 'I am a Robot AI') }
 

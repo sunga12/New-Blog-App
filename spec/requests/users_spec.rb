@@ -18,9 +18,8 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /show' do
-
     let(:user) { User.create(name: 'Jackson', bio: 'Robot AI') }
-    
+
     before do
       get user_path(user.id)
     end
