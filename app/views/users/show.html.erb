@@ -1,7 +1,7 @@
 
 <section>
 <div class="user" >
-    <img class="pro-pic" src='<%@user.photo%>' alt='Profile-pic'> <br>
+    <img class="pro-pic" src='<%= @user.photo%>' alt='Profile-pic'> <br>
   <div class="user-dets">
     <h2 class="user-name"><%=@user.name%></h2>
     <p class='num-posts' >Number of Posts: <%=@user.posts_counter%></p>
@@ -29,5 +29,5 @@
 <%end%>
 
 
-<button><%= link_to "See All Posts", user_posts_path(@user) %></button>
+<a href="<%=user_posts_path(@user) %>">See All Posts</a>
 </section>
