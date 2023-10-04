@@ -1,5 +1,6 @@
 <h2>New Post</h2>
 <div>
+<%= render "devise/shared/logout" %>
 <br>
 <%= form_with model: @post, method: :post, url: user_posts_path do |form| %>
   <%= form.label :title %><br>
