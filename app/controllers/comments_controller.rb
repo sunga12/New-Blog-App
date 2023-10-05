@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def index
-    @comment = Post.find(params[:post_id]).comments
-    render json: @comment
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
   end
 
   def new
