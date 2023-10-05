@@ -4,10 +4,19 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :users, only: [ :index, :show ] do
     resources :posts, only: [ :index, :new, :create, :show ] do
-      resources :comments, only: [ :new, :create ]
+      resources :comments, only: [ :index, :new, :create ]
       resources :likes, only: [ :create ]
     end
     end
+
+    namespace :api do
+      namespace :v1 do
+        resources :users do
+          resources :posts, only: [:index]
+          resources :comments, only: [:index, :create]
+        end
+      end
+
 
     delete '/users/:user_id/posts/:post_id', to: 'posts#destroy', as: 'delete_post'
     delete '/users/:user_id/posts/:post_id/comments/:comment_id', to: 'comments#destroy', as: 'delete_comment'
