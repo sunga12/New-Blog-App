@@ -1,5 +1,7 @@
 
+
 <section class="mx-20" >
+<%= render "devise/shared/logout" %>
   <% @users.each do |user| %>
     <a href="/users/<%= user.id%>" class="user">
       <img class="pro-pic" src='<%= user.photo%>' alt='Profile-pic'>
