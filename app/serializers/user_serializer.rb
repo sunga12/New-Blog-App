@@ -1,4 +1,4 @@
-class BandSerializer < ActiveModel::Serializer
+class UserSerializer < ActiveModel::Serializer
   attributes :id
 
   has_many :posts, :comments
