@@ -97,3 +97,13 @@ button {
   display: flex;
   justify-content: center;
 }
+
+.input {
+  border: 4px solid rgb(249, 188, 165);
+  width: 90%;
+  padding: 2%;
+}
+
+.input:focus {
+  border: 4px solid aqua;
+}
