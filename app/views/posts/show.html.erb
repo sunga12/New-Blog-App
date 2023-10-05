@@ -7,6 +7,9 @@
     by 
     <%= @user.name %></p>
     <p>Comments: <%= @user_post.comments_counter %> Likes: <%= @user_post.likes_counter %></p>
+            <% if can? :manage, @user_post %>
+          <%= button_to "Delete", user_post_path(@user_post.author_id, @user_post.id), method: :delete %>
+        <% end %>
   </div>
   <br>
   <p><%= @user_post.text %></p>
