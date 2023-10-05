@@ -40,4 +40,15 @@ class PostsController < ApplicationController
     @user_post = @user.posts.find(params[:id])
     @comments = @user_post.comments
   end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    # @user = User.find(params[:user_id])
+    # @post = @user.posts.find(params[:id])
+    @comments = @post.comments
+    @post.likes.destroy_all
+    @comments.destroy_all
+    @post.destroy
+    redirect_to user_posts_path(id: current_user)
+  end
 end

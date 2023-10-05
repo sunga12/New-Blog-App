@@ -4,9 +4,12 @@
 <div class="post" >
   <div class="post-header">
     <p><%= @user_post.title %>
-    by 
+    by
     <%= @user.name %></p>
     <p>Comments: <%= @user_post.comments_counter %> Likes: <%= @user_post.likes_counter %></p>
+            <% if can? :manage, @user_post %>
+          <%= button_to "Delete", user_post_path(@user_post.author_id, @user_post.id), method: :delete %>
+        <% end %>
   </div>
   <br>
   <p><%= @user_post.text %></p>
@@ -25,6 +28,9 @@
 <div class="post-comments">
   <% @user_post.comments.each do |comment| %>
       <p><%= comment.author.name %>: <%= comment.text%></p>
+      <% if can? :manage, comment %>
+        <%= button_to "Delete", delete_comment_path(@user_post.author_id, @user_post.id, comment.id), method: :delete %>
+      <% end %>
   <% end %>
 </div>
 

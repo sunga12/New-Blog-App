@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   # Attributes
   attribute :name, :string
+  attribute :role, :string
   attribute :bio, :text
   attribute :photo, :string
   attribute :posts_counter, :integer, default: 0
@@ -20,7 +21,15 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :posts_counter, numericality: { greater_than_or_equal_to: 0, only_integer: true }
 
+  # User::Roles
+  # The available roles
+  %i[admin default].freeze
+
   # Methods
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 
   def three_most_recent_posts
     # 'order' to sort the posts by 'created_at' in descending order
